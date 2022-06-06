@@ -1269,12 +1269,12 @@ function CPreloader() {
         c.mask = e;
         b = new createjs.Text("", "30px " + FONT, "#fff");
         b.x = CANVAS_WIDTH / 2;
-        b.y = CANVAS_HEIGHT / 2 + 100;
+        b.y = CANVAS_HEIGHT / 2 + 200;
         b.textBaseline = "alphabetic";
         b.textAlign = "center";
         k.addChild(b);
         q = s_oSpriteLibrary.getSprite("but_start");
-        n = new CTextButton(CANVAS_WIDTH / 1.5, CANVAS_HEIGHT / 2, q, TEXT_PRELOADER_CONTINUE,
+        n = new CTextButton(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + 200, q, TEXT_PRELOADER_CONTINUE,
             "Arial", "#000", "bold 20", k);
         n.addEventListener(ON_MOUSE_UP, this._onButStartRelease, this);
         n.setVisible(!1);
