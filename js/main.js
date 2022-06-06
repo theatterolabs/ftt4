@@ -2371,7 +2371,7 @@ function CEndPanel(a) {
         d.on("click", function() {});
         c = new createjs.Text("", " 44px " + FONT, "#fff");
         c.x = CANVAS_WIDTH / 2;
-        c.y = CANVAS_HEIGHT / 2 - 190;
+        c.y = CANVAS_HEIGHT / 2 - 150;
         c.textAlign = "center";
         c.textBaseline = "alphabetic";
         c.lineHeight = 60;
