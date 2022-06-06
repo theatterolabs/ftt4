@@ -1253,7 +1253,7 @@ function CPreloader() {
         h.y = CANVAS_HEIGHT / 2 - 180;
         k.addChild(h);
         m = new createjs.Shape;
-        m.graphics.beginFill("rgba(0,0,0,0.01)").drawRoundRect(h.x - 100, h.y - 100, 400, 400, 10);
+        m.graphics.beginFill("rgba(0,0,0,0.01)").drawRoundRect(h.x - 200, h.y - 200, 400, 400, 10);
         k.addChild(m);
         h.mask = m;
         q = s_oSpriteLibrary.getSprite("progress_bar");
@@ -1274,8 +1274,8 @@ function CPreloader() {
         b.textAlign = "center";
         k.addChild(b);
         q = s_oSpriteLibrary.getSprite("but_start");
-        n = new CTextButton(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, q, TEXT_PRELOADER_CONTINUE,
-            "Arial", "#000", "bold 30", k);
+        n = new CTextButton(CANVAS_WIDTH / 1.5, CANVAS_HEIGHT / 2, q, TEXT_PRELOADER_CONTINUE,
+            "Arial", "#000", "bold 20", k);
         n.addEventListener(ON_MOUSE_UP, this._onButStartRelease, this);
         n.setVisible(!1);
         f = new createjs.Shape;
