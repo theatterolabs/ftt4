@@ -997,7 +997,6 @@ var CANVAS_WIDTH = 790,
     CANVAS_WIDTH_HALF = .5 * CANVAS_WIDTH,
     CANVAS_HEIGHT_HALF = .5 * CANVAS_HEIGHT,
     FONT = "arialbold",
-    FONT2 = "arialbold",
     EDGEBOARD_X = 150,
     EDGEBOARD_Y = 0,
     FPS = 30,
@@ -2212,7 +2211,7 @@ function CInterface() {
         F.setPosition(y, x);
         F.changeState(15);
         n = CANVAS_WIDTH / 2 - 350;
-        r = new createjs.Text("x " + LIVES, "30px " + FONT2, "#fff");
+        r = new createjs.Text("x " + LIVES, "30px " + FONT, "#fff");
         r.x = n;
         r.y = 88;
         r.textAlign = "left";
@@ -2263,7 +2262,7 @@ function CInterface() {
         var g = new createjs.Container;
         g.scaleX = 0;
         g.scaleY = 0;
-        var m = new createjs.Text(a, b + "px " + FONT2, "#000");
+        var m = new createjs.Text(a, b + "px " + FONT, "#000");
         m.x = 0;
         m.y = 0;
         m.textAlign = "center";
@@ -2271,7 +2270,7 @@ function CInterface() {
         m.outline = 4;
         g.addChild(m);
         var h = new createjs.Text(a, b + "px " +
-            FONT2, "#ffffff");
+            FONT, "#ffffff");
         h.x = 0;
         h.y = 0;
         h.textAlign = "center";
@@ -2370,14 +2369,14 @@ function CEndPanel(a) {
     this._init = function(a) {
         d = createBitmap(a);
         d.on("click", function() {});
-        c = new createjs.Text("", " 44px " + FONT2, "#fff");
+        c = new createjs.Text("", " 44px " + FONT, "#fff");
         c.x = CANVAS_WIDTH / 2;
         c.y = CANVAS_HEIGHT / 2 - 190;
         c.textAlign = "center";
         c.textBaseline = "alphabetic";
         c.lineHeight = 60;
         c.lineWidth = 450;
-        e = new createjs.Text("", " 40px " + FONT2, "#fff");
+        e = new createjs.Text("", " 40px " + FONT, "#fff");
         e.x = CANVAS_WIDTH / 2;
         e.y = CANVAS_HEIGHT / 2;
         e.textAlign = "center";
@@ -2420,7 +2419,7 @@ function CEndPanel(a) {
             alpha: 1
         }, 500).call(function() {
             d._initListener();
-            s_iAdsLevel === NUM_LEVEL_FOR_ADS ? ($(s_oMain).trigger("show_interlevel_ad"), s_iAdsLevel = 1) : s_iAdsLevel++
+            //s_iAdsLevel === NUM_LEVEL_FOR_ADS ? ($(s_oMain).trigger("show_interlevel_ad"), s_iAdsLevel = 1) : s_iAdsLevel++
         });
         $(s_oMain).trigger("end_level", 1);
         $(s_oMain).trigger("share_event", a);
@@ -3270,7 +3269,7 @@ function CCreditsPanel() {
         a = CANVAS_WIDTH / 2 + 204;
         b = new CGfxButton(a, 264, n, m);
         b.addEventListener(ON_MOUSE_UP, this.unload, this);
-        c = new createjs.Text(TEXT_CREDITS_DEVELOPED, "48px " + FONT2, "#ffffff");
+        c = new createjs.Text(TEXT_CREDITS_DEVELOPED, "48px " + FONT, "#ffffff");
         c.x = CANVAS_WIDTH / 2;
         c.y = 350;
         c.textAlign = "center";
@@ -3282,7 +3281,7 @@ function CCreditsPanel() {
         k.x = CANVAS_WIDTH / 2;
         k.y = 470;
         m.addChild(k);
-        h = new createjs.Text(TEXT_LINK, "42px " + FONT2, "#ffffff");
+        h = new createjs.Text(TEXT_LINK, "42px " + FONT, "#ffffff");
         h.x = CANVAS_WIDTH / 2;
         h.y = 530;
         h.textAlign = "center";
@@ -3437,7 +3436,7 @@ function CTeamChoose() {
     };
     this.createText = function(a, b, c) {
         var d = new createjs.Container;
-        a = new createjs.Text(a, b + "px " + FONT2, "#ffffff");
+        a = new createjs.Text(a, b + "px " + FONT, "#ffffff");
         a.textAlign = "center";
         a.lineWidth = c;
         a.x = 0;
@@ -3551,7 +3550,7 @@ function CPause() {
         e.regY = .5 * c.height;
         b.addChild(e);
         c =
-            new createjs.Text(TEXT_PAUSE, "80px " + FONT2, "#ffffff");
+            new createjs.Text(TEXT_PAUSE, "80px " + FONT, "#ffffff");
         c.x = .5 * CANVAS_WIDTH;
         c.y = .5 * CANVAS_HEIGHT - 200;
         c.textAlign = "center";
@@ -3600,7 +3599,7 @@ function CAreYouSurePanel(a) {
         d.regX = .5 * a.width;
         d.regY = .5 * a.height;
         f.addChild(d);
-        b = new createjs.Text(TEXT_ARE_SURE, "70px " + FONT2, "#ffffff");
+        b = new createjs.Text(TEXT_ARE_SURE, "70px " + FONT, "#ffffff");
         b.x = CANVAS_WIDTH / 2 + 10;
         b.y =
             CANVAS_HEIGHT_HALF - 120;
@@ -3715,14 +3714,14 @@ function CHelpPanel(a, d, b) {
         f.regX = .5 * d.width;
         f.regY = .5 * d.height;
         m.addChild(f);
-        c = new createjs.Text(TEXT_HOW_TO_PLAY, "50px " + FONT2, "#ffffff");
+        c = new createjs.Text(TEXT_HOW_TO_PLAY, "50px " + FONT, "#ffffff");
         c.textAlign = "center";
         c.lineWidth = 500;
         c.x = .5 * CANVAS_WIDTH;
         c.y = .5 * CANVAS_HEIGHT -
             240;
         m.addChild(c);
-        e = new createjs.Text(s_bMobile ? TEXT_HELP1_MOBILE_BATTER : TEXT_HELP1_PC_BATTER, "28px " + FONT2, "#ffffff");
+        e = new createjs.Text(s_bMobile ? TEXT_HELP1_MOBILE_BATTER : TEXT_HELP1_PC_BATTER, "28px " + FONT, "#ffffff");
         e.textAlign = "center";
         e.lineWidth = 450;
         e.x = .5 * CANVAS_WIDTH;
