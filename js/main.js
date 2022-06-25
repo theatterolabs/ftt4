@@ -1440,6 +1440,7 @@ function CMain(a) {
         s_oSpriteLibrary.addSprite("but_continue", "./sprites/but_continue.png");
         s_oSpriteLibrary.addSprite("pole_0", "./sprites/pole_0.png");
         s_oSpriteLibrary.addSprite("pole_1", "./sprites/pole_1.png");
+        s_oSpriteLibrary.addSprite("pole_2", "./sprites/pole_2.png");
         s_oSpriteLibrary.addSprite("but_pause", "./sprites/but_pause.png");
         s_oSpriteLibrary.addSprite("but_yes", "./sprites/but_yes.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
@@ -1921,7 +1922,7 @@ function CGame(a, d, b) {
         w = !0,
         z = !1,
         E, A, M = null,
-        F, G, H, r;
+        F, G, H, pole0, pole2, r;
     this._init = function(a, b) {
         $(s_oMain).trigger("start_session");
         setVolume("soundtrack", .35);
@@ -1941,8 +1942,25 @@ function CGame(a, d, b) {
         this.ballResetPos();
         y = LIVES;
         G = new CBatter(F, a);
+        
         d = s_oSpriteLibrary.getSprite("pole_0");
-        new CPole(CANVAS_WIDTH_HALF, CANVAS_HEIGHT - 193, d, F);
+        pole0 = createBitmap(d);
+        pole0.x = CANVAS_WIDTH_HALF;
+        pole0.y = CANVAS_HEIGHT - 193;
+        pole0.regX = .5 * d.width;
+        pole0.regY = .5 * d.height;
+        F.addChild(pole0);
+        
+         d = s_oSpriteLibrary.getSprite("pole_2");
+        pole2 = createBitmap(d);
+        pole2.x = CANVAS_WIDTH_HALF;
+        pole2.y = CANVAS_HEIGHT - 193;
+        pole2.regX = .5 * d.width;
+        pole2.regY = .5 * d.height;
+        F.addChild(pole2);
+        pole2.alpha = 0;
+        
+
         !1 === s_bMobile ? document.onkeydown = c : (A.createController(), A.refreshButtonPos(s_iOffsetX, s_iOffsetY), A.createHitArea());
         E = !0;
         A.createHelpPanel()
@@ -2031,6 +2049,8 @@ function CGame(a, d, b) {
             l = !0;
             playSound("crowd_ohhh", 1, !1);
             A.createAnimText(TEXT_BOWLED, 48, !1, null, 300, this.afterBallMissed);
+            pole2.alpha = 1;
+            pole0.alpha = 0;
             r.setVisible(!1);
             y--;
             A.refreshLivesText(y)
@@ -2039,6 +2059,8 @@ function CGame(a, d, b) {
         e = 0;
         p && s_oGame._strike();
         s_oGame.changeStateTarget(!1);
+         pole2.alpha = 0;
+            pole0.alpha = 1;
         x = !0;
         z = !1;
         A.setHitAreaVisible(!1)
